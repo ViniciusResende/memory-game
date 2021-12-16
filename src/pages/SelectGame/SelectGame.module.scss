@@ -1,0 +1,117 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  @media (max-width: 470px) {
+    padding: 1rem 0.5rem;
+  }
+
+  .title {
+    color: var(--text-dark);
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 72px;
+  }
+
+  .subtitle {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 100;
+
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 750px) {
+    .title {
+      font-size: 2.5rem;
+      line-height: 32px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+.slider {
+  width: 100%;
+  max-width: 1300px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  height: 685px;
+
+  background-color: var(--primary-white);
+  padding: 12px 8px;
+  border-radius: 16px;
+  margin: 16px;
+  box-shadow: 10px 13px 15px -17px rgba(0, 0, 0, 0.65);
+
+  > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h3 {
+      color: var(--text-dark);
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 54px;
+    }
+
+    > span {
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 300;
+
+      text-transform: uppercase;
+    }
+  }
+
+  > img {
+    border-radius: 16px;
+    max-width: 800px;
+    max-height: 520px;
+    margin: 8px 0;
+
+    user-select: none;
+
+    @media (max-width: 750px) {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  .playGame {
+    color: var(--primary-white);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+
+    background-color: var(--primary-green);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    justify-self: flex-end;
+
+    cursor: pointer;
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(0.85);
+    }
+
+    &:active {
+      filter: brightness(0.75);
+    }
+  }
+}
