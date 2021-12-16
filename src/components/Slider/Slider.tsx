@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { getUniqueId } from '../../utils';
 import { useInterval } from '../../hooks';
 
-import { ArrowIcon } from '../../../public/svg';
+import { ArrowIcon } from '../../assets/svg';
 import styles from './Slider.module.scss';
 
 type SliderProps = {
