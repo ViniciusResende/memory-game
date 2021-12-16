@@ -1,41 +1,75 @@
-* {
+html,
+body {
   margin: 0;
-  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--support-darker);
+  text-align: left;
+  background-color: var(--seconary-white);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: 0;
+}
+
+* {
   box-sizing: border-box;
 }
 
+html::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--support-darker);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: var(--support-dark);
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--text);
+}
+
 :root {
-  --background: #121214;
-  --red: #e23b48;
-  --green: #2d635f;
-  --white: #ffffff;
-  --black-800: #202524;
-}
-
-@media (max-width: 1080px) {
-  html {
-    font-size: 93.75%; // 16x0,9375 = 15px
-  }
-}
-
-@media (max-width: 720px) {
-  html {
-    font-size: 87.5%; //16×0,87.5 = 14px
-  }
-}
-
-body {
-  background: var(--background);
-}
-
-body,
-input,
-textarea,
-select,
-button {
-  font: 400 1rem 'Roboto' sans-serif;
-}
-
-button {
-  cursor: pointer;
+  --primary-white: #fff;
+  --seconary-white: #ededed;
+  --thirdary-white: #ddd;
+  --primary-black: #000;
+  --secondary-black: #121212;
+  --primary-blue: #3178c6;
+  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-red: #ef4035;
+  --primary-green: #5cb85c;
+  --primary-hover-blue: #3d96f7;
+  --text-light: #c7c7c7;
+  --text: #666666;
+  --text-dark: #333333;
+  --support-dark: #343a40;
+  --support-darker: #212529;
+  --support-light: #d1d1d1;
 }
