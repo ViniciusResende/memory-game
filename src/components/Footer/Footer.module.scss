@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 1.5rem 5rem;
+  background-color: var(--support-dark);
+
+  > span {
+    color: var(--primary-white);
+    font-weight: 300;
+  }
+
+  > img {
+    height: 40px;
+  }
+}
