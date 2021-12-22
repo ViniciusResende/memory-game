@@ -1,6 +1,6 @@
 import { getPokemons } from '../services/pokemon.service';
 import { getRandomNumberBetween, shuffleArray } from '../utils';
-import { PokemonsArrayType } from '../types/pokemon';
+import { GenericCardType } from '../types/cards';
 
 type FetchedPokemonsType = {
   name: string;
@@ -10,16 +10,17 @@ type FetchedPokemonsType = {
 async function handleFetchIndiviualPokemon(
   fetchedPokemonsArray: FetchedPokemonsType[],
 ) {
-  let newPokemonsArray: PokemonsArrayType[] = [];
-  for (let index = 0; index < fetchedPokemonsArray.length; index++) {
-    const response = await fetch(fetchedPokemonsArray[index].url);
+  let newPokemonsArray: GenericCardType[] = [];
+  for (const fetchedPokemon of fetchedPokemonsArray) {
+    const response = await fetch(fetchedPokemon.url);
     const { id, name, sprites } = await response.json();
 
     newPokemonsArray = [
       ...newPokemonsArray,
-      { id, name, imgUrl: sprites.front_default },
+      { id, comparsionValue: id, name, imgUrl: sprites.front_default },
       {
         id: id * 2,
+        comparsionValue: id,
         name,
         imgUrl: sprites.front_default,
       },
@@ -39,7 +40,7 @@ export async function getPokemonsArray() {
     fetchedPokemons,
   );
 
-  const shuffledArray: PokemonsArrayType[] = shuffleArray(detailedPokemonArray);
+  const shuffledArray: GenericCardType[] = shuffleArray(detailedPokemonArray);
 
   return shuffledArray;
 }
