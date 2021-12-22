@@ -1,0 +1,160 @@
+.flipper {
+  transition: 0.4s;
+  transform-style: preserve-3d;
+  position: relative;
+  perspective: 1000;
+
+  min-width: 196px;
+  margin: auto;
+
+  &.flipped {
+    transform: rotateY(180deg);
+    pointer-events: none;
+
+    .front {
+      transform: rotateY(180deg);
+      visibility: hidden;
+    }
+
+    .back {
+      transform: rotateY(0deg);
+    }
+
+    .text {
+      opacity: 1;
+      transform: rotateY(180deg);
+
+      transition: opacity 0.4s ease-in;
+    }
+  }
+
+  @media (max-width: 400px) {
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18.75rem;
+  max-width: 12.5rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  border: 2px solid var(--support-darker);
+  padding: 1.25rem;
+  background: var(--support-darker);
+  color: var(--seconary-white);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+
+  &.memorized {
+    visibility: hidden;
+    opacity: 0.01;
+  }
+
+  &:hover {
+    border-color: var(--primary-blue);
+  }
+
+  @media (max-width: 400px) {
+  }
+}
+
+.content {
+  border: 2px solid var(--primary-hover-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+
+  img {
+    height: 8.25rem;
+  }
+
+  > svg {
+    max-width: 130px;
+  }
+}
+
+.back,
+.front {
+  backface-visibility: hidden;
+  position: absolute;
+
+  transition: 0.4s;
+  transform-style: preserve-3d;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.text {
+  opacity: 0;
+  margin-top: 10rem;
+
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  text-align: center;
+
+  transition: none;
+  user-select: none;
+}
+
+.HTTP_GAME,
+.DOGGO_GAME {
+  &.flipper {
+    min-width: 460px;
+  }
+
+  .container {
+    justify-content: flex-start;
+
+    max-width: none;
+    height: 28rem;
+  }
+
+  .content > img {
+    border-radius: 16px;
+    height: 18rem;
+
+    margin-bottom: 4rem;
+  }
+
+  .text {
+    margin-top: 18.5rem;
+    max-width: 230px;
+  }
+}
+
+.HTTP_GAME {
+  &.flipped {
+    .back {
+      transform: rotateY(180deg);
+      opacity: 1;
+    }
+  }
+
+  .back {
+    backface-visibility: visible;
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+  }
+}
+
+.DOGGO_GAME {
+  .content > img {
+    max-width: 390px;
+  }
+}
