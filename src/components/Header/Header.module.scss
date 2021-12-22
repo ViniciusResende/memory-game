@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 1rem 5rem;
+  background-color: var(--support-dark);
+
+  > img {
+    min-height: 40px;
+    max-height: 80px;
+  }
+}
+
+.exitIcon {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-weight: 300;
+
+  > svg {
+    width: 1.3rem;
+    margin-right: 12px;
+    fill: var(--text-light);
+
+    transition: fill 0.3s ease;
+  }
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--text);
+
+    > svg {
+      fill: var(--text);
+    }
+  }
+}
